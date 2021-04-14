@@ -1,0 +1,16 @@
+.list{
+    margin:20px;
+    border: 1px black;
+    border-style: dotted;
+    padding: 5px ;
+    width: 200px;  
+   text-align: left;
+    
+}
+
+.items{
+    
+    border: 1px black;
+    border-style: dotted;
+    
+}
