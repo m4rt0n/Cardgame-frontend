@@ -5,6 +5,7 @@ import './List.css';
 class List extends Component{
 state={
    items: [],
+   showDetails: false,
 };
 
 componentDidMount(){
@@ -17,13 +18,37 @@ console.log(response)
     );
 }
 
+
+
+
+    clickEvent=(x)=>{  
+console.log('clicked: ',x );
+
+    }
+
 render(){
-    return(<div className = "list"> 
-    <p >My List: </p>
+    const {showDetails} = this.state;
+    return(
+        <div className = "list">
+    <p>List: </p>
         {this.state.items.map((item, index)=>(
-            <p key={index}> Eng: {item.english} / Spanish: {item.spanish} / Picture: {item.picture.title}</p>
-        ))}</div>)
-}
+            <ul  className = "card" 
+            onClick={()=>this.clickEvent(item.english)}
+             key={index}> Eng: {item.english}  Spanish: {item.spanish}  Picture: {item.picture.title}</ul>
+        ))}
+
+<div className="details">
+    <p>Details: </p>
+            <button onClick={() => this.setState({ showDetails: !showDetails })}>toggle</button>
+            <div style={{ display: (showDetails ? 'block' : 'none') }}>This is visible</div>
+            </div>
+
+        </div>
+        
+        
+        )
+
+        }
 
 };
 export default List
