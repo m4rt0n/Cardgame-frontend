@@ -28,9 +28,13 @@ class Stack extends Component {
         console.log('add');
     }
     render() {
-        const stack = this.props;
-        const list = stack.map(card => {
-            return <tr key={card.id} >
+
+
+    if (this.props) {   
+        const cards = this.props.cards;   
+        //   const data = Array.from(this.props); 
+        const list = cards.map(card => {
+            return <tr key={card.english} >
 
                 <td onClick={() => this.clickEvent(card)}>{card.picture.title} </td>
                 <td >{card.english}</td>
@@ -38,17 +42,13 @@ class Stack extends Component {
                 <td>
                     <button onClick={() => this.editEvent(card.english)}>E</button>
                     <button onClick={() => this.deleteEvent(card.english)}>D</button>
-                </td>
+                </td>              
             </tr>
         });
 
-        const card = this.props.card;
         return (
 
             <div className="container">
-                <div className="navbar">
-                    <p>navbar</p>
-                </div>
                 <button onClick={this.addEvent}>Add</button>
                 <table className="table">
                     <thead >
@@ -62,22 +62,10 @@ class Stack extends Component {
                     <tbody>
                         {list}
                     </tbody>
-                </table>
-
-                <div className="details">
-                    <p className="id">Id: {card.id}</p>
-                    <p className="english">Eng: {card.english}</p>
-                    <p className="spanish">Esp: {card.spanish}</p>
-                    <p className="pictureTitle">Pic title: {card.picture}</p>
-                    <img className="picture" src={`data:image/jpeg;base64,${card.image}`}></img>
-                </div>
-            </div>
+                </table>             
+            </div>   
         );
-
-
-
-
-
+        }else{console.log("no props in stack")}
     };
 };
 
