@@ -1,0 +1,30 @@
+.navbar{
+    border: 1px black;
+    border-style: dotted;
+}
+
+.table{
+    margin:20px;
+    border: 1px black;
+    border-style: dotted;
+    padding: 5px ;
+    width: 500px;  
+   text-align: left;
+    
+}
+
+.item{
+
+    border: 1px black;
+    border-style: dotted;
+}
+.card{
+
+    border: 1px black;
+    border-style: dotted;
+    height: 200px;
+    width: 200px;
+}
+
+
+

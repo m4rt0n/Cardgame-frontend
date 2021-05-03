@@ -1,16 +1,14 @@
 
 import './App.css';
-import Hello from './components/Hello';
-import Card from  './components/Card';
-import GetAllCards from './components/GetAllCards';
-import List from './components/List';
+import List from './components/Stack';
+import User from './components/User';
 
 function App() {
   return (
     <div className="App">
 
+      <User></User>
       
-     <List></List>
     </div>
   );
 }

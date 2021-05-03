@@ -4,40 +4,13 @@ import { Component } from "react";
 import './Card.css';
 
 class Card extends Component{
-    state={
-        searchId:'',
-        id:'',
-        english:'',
-        spanish:'',
-        picture:'',
-        image:'',
-    };
-
-    textEvent=(event) =>{
-        this.setState({searchId: event.target.value})
-        console.log(this.state.searchId);
-      };
-
-      buttonEvent=()=>{ 
-        axios.get('http://localhost:8081/cards/getbyenglish/'+this.state.searchId)
-        .then(response=>{
-          this.setState(
-            {
-            id: response.data.id,
-            english: response.data.english,
-            spanish: response.data.spanish,
-            picture: response.data.picture.title,
-            image: response.data.picture.image.data,
-            }
-          );
-          console.log(response)
-        });
-        
-  };
-
+constructor(props){
+  super(props);
+}
 
 
   render(){
+    const card = this.props.card;
     return(
       <div className="card">
         <div className="input">
@@ -51,11 +24,11 @@ class Card extends Component{
        getByEnglish </button>  
        </div>
        <div className="details">  
-        <p className="id">Id: {this.state.id}</p>
-        <p className="english">Eng: {this.state.english}</p>
-        <p className="spanish">Esp: {this.state.spanish}</p>
-        <p className="pictureTitle">Pic title: {this.state.picture}</p>
-        <img  className="picture"   src={`data:image/jpeg;base64,${this.state.image}`}></img>
+        <p className="id">Id: {card.id}</p>
+        <p className="english">Eng: {card.english}</p>
+        <p className="spanish">Esp: {card.spanish}</p>
+        <p className="pictureTitle">Pic title: {card.picture}</p>
+        <img  className="picture"   src={`data:image/jpeg;base64,${card.image}`}></img>
       </div>
       </div>  
     );
