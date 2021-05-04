@@ -4,7 +4,7 @@
     border: 1px black;
     border-style: dotted;
     padding: 5px ;
-    width: 300px;  
+    width: 500px;  
     height: 400px;
     
 }
@@ -14,9 +14,17 @@
     border: 1px black;
     border-style: dashed;
     padding: 3px ;
+   text-align:center;
 }
 
 .picture {
     height: 50px;
     width: 50px; 
 } 
+
+.details *{
+    margin:auto;
+    border: 1px black;
+    border-style: dashed;
+    padding: 3px ;
+}

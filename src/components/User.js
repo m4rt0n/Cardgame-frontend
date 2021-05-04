@@ -25,6 +25,7 @@ class User extends Component {
         return (
             <div className="user">
                 <div className="userDetails">
+                <p>User</p>
                     <p className="id">id: {details.id}</p>
                     <p className="username">username: {details.username}</p>
                     <p className="password">password: {details.password}</p>
