@@ -12,22 +12,22 @@ class Card extends Component {
   
   
   
-  handleClick() {
+  handleClick=(param, name) =>{
     this.setState(state => ({
       isSelected: !state.isSelected
     }));
- // console.log('selected: ',x )
+
+    if(!this.state.isSelected){console.log(name, ' selected')
+  }else{console.log(name,' unselected')}
   }
 
   render() {
-
+    
     let selectedCard = [];
-if(this.state.isSelected){
-  console.log('something is selected')
-}
 
     return (
-      <div className="details" onClick={this.handleClick} >
+      <div className="details" 
+      onClick={(param) => this.handleClick(param, this.props.english)} >
         <tr>
         <img className="picture" src={`data:image/jpeg;base64,${this.props.picture.image.data}`}></img>
         <td className="english">{this.props.english}</td>
