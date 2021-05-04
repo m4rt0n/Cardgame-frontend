@@ -22,7 +22,7 @@ class Stack extends Component {
     render() {
         let itemsToRender = [];
         if (this.props) {
-            console.log('props: ', this.props)
+            console.log('stack props: ', this.props)
             if (this.props.stack) {
                 console.log(this.props.stack)
                 if (this.props.stack.cards) {
@@ -42,17 +42,7 @@ class Stack extends Component {
                 } else { console.log('cards undefined') }
 
             } else { console.log('stack undefined') }
-
-
-
-
-            /*
-            if (!Array.isArray(data) || !data.length) {
-                console.log('data array is empty')
-            }
-    */
             
-
             return (
                 <div className="container">
                     <table className="table">
@@ -71,7 +61,7 @@ class Stack extends Component {
 
                 </div>
             );
-        } else { console.log("no props") }
+        } else { console.log("no stack props") }
     };
 };
 
