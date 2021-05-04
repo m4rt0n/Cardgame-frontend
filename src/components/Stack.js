@@ -7,14 +7,8 @@ import Card from './Card';
 class Stack extends Component {
     constructor(props) {
         super(props);
+       
     }
-    state={
-        selectedCard: null
-      }
-    
-    
-
-    
 
     render() {
         let cardsToRender = [];
@@ -29,6 +23,7 @@ class Stack extends Component {
                                 english={card.english}
                                 spanish={card.spanish}
                                 picture={card.picture}
+                                
                             />
                         </div>)
                 })
@@ -48,7 +43,7 @@ class Stack extends Component {
                     </tbody>
                 </table>
 
-                <div className="Card">
+                <div className="selectCard">
 
                 </div >
             </div>

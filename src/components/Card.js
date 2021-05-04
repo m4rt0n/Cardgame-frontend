@@ -6,19 +6,26 @@ import './Card.css';
 class Card extends Component {
   constructor(props) {
     super(props);
-    this.state = {isSelected: true};
+    this.state = {isSelected: false};
     this.handleClick = this.handleClick.bind(this);
   }
+  
   
   
   handleClick() {
     this.setState(state => ({
       isSelected: !state.isSelected
     }));
-  console.log('toggle: ', this.state.isSelected )
+ // console.log('selected: ',x )
   }
 
   render() {
+
+    let selectedCard = [];
+if(this.state.isSelected){
+  console.log('something is selected')
+}
+
     return (
       <div className="details" onClick={this.handleClick} >
         <tr>
