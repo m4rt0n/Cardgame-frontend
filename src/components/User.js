@@ -38,7 +38,7 @@ details:[]
             </div>
 
             <div className="stack">
-<Stack stack = {details}/>
+<Stack stack = {userStack}/>
             </div>
             </div>
         )

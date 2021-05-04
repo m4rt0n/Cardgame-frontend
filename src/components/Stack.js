@@ -11,10 +11,8 @@ class Stack extends Component {
     
 
     
-    clickEvent = (x) => {
-        console.log('clicked: ', x.english);
-        this.card = x;
-        console.log('set new card: ', x.id);
+    buttonEvent = (x) => {
+        console.log('props: ', x);
     }
     editEvent = (x) => {
         console.log('edit: ', x);
@@ -28,28 +26,38 @@ class Stack extends Component {
         console.log('add');
     }
     render() {
-
-
     if (this.props) {   
-        const cards = this.props.cards;   
-        //   const data = Array.from(this.props); 
-        const list = cards.map(card => {
-            return <tr key={card.english} >
+        console.log('props: ',this.props)
 
-                <td onClick={() => this.clickEvent(card)}>{card.picture.title} </td>
-                <td >{card.english}</td>
-                <td>{card.spanish} </td>
-                <td>
-                    <button onClick={() => this.editEvent(card.english)}>E</button>
-                    <button onClick={() => this.deleteEvent(card.english)}>D</button>
-                </td>              
-            </tr>
+        const stack = this.props.stack;   
+      //     const data = Array.from(stack); 
+        const list = stack.map(card => {
+          return( 
+          <div className="cardList">
+              <Card key={card.english} 
+          english={card.english}
+          spanish={card.spanish}
+          picture={card.picture} 
+                  
+       />
+       </div>)
+        
+         
+         
         });
+        /*
+        if (!Array.isArray(data) || !data.length) {
+            console.log('data array is empty')
+        }
+*/
+        if(this.props.stack){
+            console.log('stack: ',this.props.stack)
+        }else{
+            console.log('no stack')
+        }
 
         return (
-
             <div className="container">
-                <button onClick={this.addEvent}>Add</button>
                 <table className="table">
                     <thead >
                         <tr >
@@ -60,12 +68,13 @@ class Stack extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {list}
-                    </tbody>
-                </table>             
+         {list}
+         </tbody>
+                </table>  
+                        
             </div>   
         );
-        }else{console.log("no props in stack")}
+        }else{console.log("no props")}
     };
 };
 

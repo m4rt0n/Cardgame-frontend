@@ -1,6 +1,5 @@
 
 import './App.css';
-import List from './components/Stack';
 import User from './components/User';
 
 function App() {
