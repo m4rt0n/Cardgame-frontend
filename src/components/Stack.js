@@ -7,26 +7,13 @@ import Card from './Card';
 class Stack extends Component {
     constructor(props) {
         super(props);
-
     }
-
-
-
-    buttonEvent = (x) => {
-        console.log('props: ', x);
-    }
-
-
-
 
     render() {
-        let itemsToRender = [];
-        if (this.props) {
+        let itemsToRender = [];       
             console.log('stack props: ', this.props)
             if (this.props.stack) {
                 console.log(this.props.stack)
-                if (this.props.stack.cards) {
-                    console.log(this.props.stack.cards)
                     {                       
                         itemsToRender = this.props.stack.cards.map(card => {
                             return (
@@ -39,8 +26,6 @@ class Stack extends Component {
                                 </div>)
                         })
                     }
-                } else { console.log('cards undefined') }
-
             } else { console.log('stack undefined') }
             
             return (
@@ -60,12 +45,8 @@ class Stack extends Component {
                     </table>
 
                 </div>
-            );
-        } else { console.log("no stack props") }
+            ); 
     };
 };
-
-
-
 
 export default Stack;
