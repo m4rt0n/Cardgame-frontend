@@ -1,0 +1,21 @@
+.u1{
+   color:blue
+}
+
+.u2{
+    color:red
+}
+
+.game{
+   color:green;
+   width:50%
+    
+}
+
+.containerTable *{
+    border: 1px black;
+    border-style: dotted;
+    padding: 5px ;
+    
+    
+}

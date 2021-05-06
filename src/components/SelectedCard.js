@@ -30,9 +30,10 @@ class SelectedCard extends Component {
             pickedCard = this.state.picked;
             return (
                     <table className="stackSelectCardTable">
-                        <thead><tr><th>Selected card</th></tr></thead>                        
+                        <thead><tr><th>Card</th></tr></thead>                        
                         <tbody className="selectedCardDetails">
-                        <tr><td><img className="selectedCardPicture" src={`data:image/jpeg;base64,${pickedCard.picture.image.data}`}></img></td></tr>
+                        <tr><td><img className="selectedCardPicture" src={`data:image/jpeg;base64,${pickedCard.picture.image.data}`}
+                        alt={pickedCard.picture.title}></img></td></tr>
                     <tr><td className="selectedCardEnglish">{pickedCard.english}</td></tr>
                     <tr><td className="selectedCardSpanish"> {pickedCard.spanish}</td></tr>  
                         </tbody>

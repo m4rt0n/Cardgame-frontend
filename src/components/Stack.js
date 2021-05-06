@@ -18,18 +18,17 @@ class Stack extends Component {
 
     render() {
         let cardsToRender = [];
-        if (this.props.stack) {
-            {
+        if (this.props.stack) {          
                 cardsToRender = this.props.stack.cards.map(card => {
                     return (
                         <Card key={card.english}
                             english={card.english}
                             spanish={card.spanish}
                             picture={card.picture}
+                            userid={this.props.userid}
                             clicked={() => this.postSelectedHandler(card.english)}/>
                     )
-                })
-            }
+                })           
         }
 
         return (           
