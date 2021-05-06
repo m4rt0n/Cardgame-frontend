@@ -15,7 +15,7 @@ class SelectedCard extends Component {
                 const english = this.props.english;
                 axios.get(url, {
                     params: {
-                        userid: '608f0eeb4484a81565857f1a',
+                        userid: '608f0eeb4484a81565857f19',
                         english: english}
                 })
                     .then(response => {
@@ -31,7 +31,7 @@ class SelectedCard extends Component {
             pickedCard = this.state.picked;
             return (
                     <table className="stackSelectCardTable">
-                        <thead><tr><th>Stack: selected card</th></tr></thead>                        
+                        <thead><tr><th>Selected card</th></tr></thead>                        
                         <tbody className="selectedCardDetails">
                         <tr><td><img className="selectedCardPicture" src={`data:image/jpeg;base64,${pickedCard.picture.image.data}`}></img></td></tr>
                     <tr><td className="selectedCardEnglish">{pickedCard.english}</td></tr>

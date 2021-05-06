@@ -1,12 +1,12 @@
 
 import './App.css';
-import User from './components/User';
+import GameContainer from './components/GameContainer';
 
 function App() {
   return (
     <div className="App">
 
-      <User></User>
+      <GameContainer></GameContainer>
       
     </div>
   );
