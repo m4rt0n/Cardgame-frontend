@@ -45,19 +45,17 @@ if (this.state.selectedCard == undefined) {
 }
 
         return (
-            <div className="container">
-                <table className="table">
-                    <thead >                        
-                            <th width="10%" >Stack</th>  
-                    </thead>
+            <div className="stackContainer">
+                <table className="stackTable">   
+                <thead><tr><th width="10%">Stack</th></tr></thead>                                              
                     <tbody>
                         {cardsToRender}
                     </tbody>
                 </table>
 
-                <div className="selectCard">
-                    <table className="cardContent">
-                        <th>selected card</th>   
+                <div className="stackSelectCard">
+                    <table className="stackSelectCardTable">
+                        <thead><tr><th>Stack: selected card</th></tr></thead>                        
                         <tbody>
                         <SelectedCard english={this.state.selectedCard} />                        
                         </tbody>

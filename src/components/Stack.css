@@ -1,5 +1,5 @@
 
-.table{
+.stackTable{
     margin:20px;
     border: 1px black;
     border-style: dotted;
@@ -9,11 +9,7 @@
     
 }
 
-.item{
-    border: 1px black;
-    border-style: dotted;
-}
-.cardContent{
+.stackSelectCardTable{
     margin:20px;
     border: 1px black;
     border-style: dotted;
