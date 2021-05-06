@@ -37,15 +37,21 @@ class SelectedCard extends Component {
             pickedCard = this.state.picked;
             console.log('SelectedCard : picked: ' + pickedCard.english)
             return (
-                <div className="selectedCardDetails">
-                    <tr><td><img className="selectedCardPicture" src={`data:image/jpeg;base64,${pickedCard.picture.image.data}`}></img></td></tr>
+                
+                    <table className="stackSelectCardTable">
+                        <thead><tr><th>Stack: selected card</th></tr></thead>                        
+                        <tbody className="selectedCardDetails">
+                        <tr><td><img className="selectedCardPicture" src={`data:image/jpeg;base64,${pickedCard.picture.image.data}`}></img></td></tr>
                     <tr><td className="selectedCardEnglish">{pickedCard.english}</td></tr>
                     <tr><td className="selectedCardSpanish"> {pickedCard.spanish}</td></tr>  
-                </div>
+                        </tbody>
+                </table>
+                    
+    
             )
         } else {
             console.log("SelectedCard: picked state: null")
-            return ((<tr><td>null state</td></tr>))
+            return ((<table><tbody><tr><td>null state</td></tr></tbody></table>))
         }
     }
 }
