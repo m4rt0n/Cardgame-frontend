@@ -1,4 +1,11 @@
-
+.selectedCardDetails {
+    margin:auto;
+    border: 1px black;
+    border-style: solid;
+    padding: 3px ;
+    color:blueviolet
+    
+}
 .stackTable{
     margin:20px;
     border: 1px black;

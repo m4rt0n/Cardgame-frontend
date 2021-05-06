@@ -47,7 +47,8 @@ if (this.state.selectedCard == undefined) {
         return (
             <div className="stackContainer">
                 <table className="stackTable">   
-                <thead><tr><th width="10%">Stack</th></tr></thead>                                              
+                <thead><tr><th width="10%">Stack</th></tr></thead>                   
+                           
                     <tbody>
                         {cardsToRender}
                     </tbody>
