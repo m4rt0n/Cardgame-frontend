@@ -51,7 +51,7 @@ class SelectedCard extends Component {
             )
         } else {
             console.log("SelectedCard: picked state: null")
-            return ((<table><tbody><tr><td>null state</td></tr></tbody></table>))
+            return (null)
         }
     }
 }
