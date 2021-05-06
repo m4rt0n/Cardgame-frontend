@@ -5,7 +5,7 @@ import './Stack';
 
 class SelectedCard extends Component {
     state = { 
-        picked: [] 
+        picked: null 
     }
 
 
@@ -21,7 +21,7 @@ class SelectedCard extends Component {
                     }})
                 .then(response => {
                    //         console.log(response);
-                            this.setState({ picked: + response.data });
+                            this.setState({ picked:  response.data });
                         });
         }
     }
@@ -31,6 +31,7 @@ render(){
     let pickedCard = '';
     if (this.state.picked) {
         pickedCard = this.state.picked;
+        console.log('PickedCard : picked: ' + pickedCard.english)
     }
 
     return (

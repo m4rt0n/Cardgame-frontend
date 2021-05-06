@@ -15,7 +15,7 @@ class Stack extends Component {
 
     postSelectedHandler = (x) => {
         this.setState({ selectedCard: x });
-        console.log('selected: ', x)
+        console.log('Stack : selected: ', x)
     }
 
     render() {
