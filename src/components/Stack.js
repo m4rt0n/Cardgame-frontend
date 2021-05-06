@@ -38,7 +38,7 @@ class Stack extends Component {
         } else { console.log('stack undefined') }
 
         //select card
-        if (this.state.selectedCard == undefined) {
+        if (this.state.selectedCard === undefined) {
             console.log("Stack : selected: undefined")
         } else {
             console.log('Stack : selected: defined')
