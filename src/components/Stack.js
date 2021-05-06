@@ -12,17 +12,13 @@ class Stack extends Component {
         }
     }
 
-
     postSelectedHandler = (x) => {
         this.setState({ selectedCard: x });
-        //  console.log('Stack : selected: ', x)
     }
 
     render() {
-        //card table
         let cardsToRender = [];
         if (this.props.stack) {
-            console.log(this.props.stack)
             {
                 cardsToRender = this.props.stack.cards.map(card => {
                     return (
@@ -30,18 +26,10 @@ class Stack extends Component {
                             english={card.english}
                             spanish={card.spanish}
                             picture={card.picture}
-                            clicked={() => this.postSelectedHandler(card.english)}
-                        />
+                            clicked={() => this.postSelectedHandler(card.english)}/>
                     )
                 })
             }
-        } else { console.log('stack undefined') }
-
-        //select card
-        if (this.state.selectedCard === undefined) {
-            console.log("Stack : selected: undefined")
-        } else {
-            console.log('Stack : selected: defined')
         }
 
         return (
@@ -51,19 +39,10 @@ class Stack extends Component {
                     <tbody>
                         {cardsToRender}
                     </tbody>
-                </table>
-
-                
-                <SelectedCard english={this.state.selectedCard} />
-                
-                
-                </div>
-                
-                
-            
+                </table> 
+                <SelectedCard english={this.state.selectedCard} /> 
+                </div> 
         );
     };
 };
-//<SelectedCard english={selected.english} />
-//<SelectedCard selectedCard />
 export default Stack;
