@@ -8,7 +8,7 @@ class Stack extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedCard: null
+            selectedCard: null,
         }
     }
 
@@ -32,7 +32,7 @@ class Stack extends Component {
             }
         }
 
-        return (
+        return (           
             <div className="stackContainer">
                 <table className="stackTable">
                     <thead><tr><th width="10%">Stack</th></tr></thead>
@@ -40,7 +40,9 @@ class Stack extends Component {
                         {cardsToRender}
                     </tbody>
                 </table> 
-                <SelectedCard english={this.state.selectedCard} /> 
+                <SelectedCard 
+                english={this.state.selectedCard}
+                userid={this.props.userid} /> 
                 </div> 
         );
     };

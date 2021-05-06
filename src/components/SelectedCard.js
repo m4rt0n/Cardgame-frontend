@@ -12,11 +12,10 @@ class SelectedCard extends Component {
         if (this.props.english) {
             if (!this.state.picked || (this.state.picked && this.state.picked.english !== this.props.english)) {
                 const url = 'http://localhost:8080/users/getcardbyenglish/';
-                const english = this.props.english;
                 axios.get(url, {
                     params: {
-                        userid: '608f0eeb4484a81565857f19',
-                        english: english}
+                        userid: this.props.userid,
+                        english: this.props.english}
                 })
                     .then(response => {
                         this.setState({ picked: response.data });

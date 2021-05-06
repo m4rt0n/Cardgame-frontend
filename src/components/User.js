@@ -23,7 +23,7 @@ class User extends Component {
                         <p className="email">email: {user.email}</p>
                     </div>
                     <div className="stack">
-                    <Stack stack={user.stack} />  
+                    <Stack stack={user.stack} userid={user.id} />  
                     </div>
                 </div>
             )
