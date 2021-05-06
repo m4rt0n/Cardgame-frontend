@@ -17,15 +17,12 @@ class Stack extends Component {
             console.log(this.props.stack)
             {
                 cardsToRender = this.props.stack.cards.map(card => {
-                    return (
-                        <div className="cardList">
+                    return (                      
                             <Card key={card.english}
                                 english={card.english}
                                 spanish={card.spanish}
-                                picture={card.picture}
-                                
-                            />
-                        </div>)
+                                picture={card.picture} />
+                        )
                 })
             }
         } else { console.log('stack undefined') }
