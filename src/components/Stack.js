@@ -7,7 +7,15 @@ import Card from './Card';
 class Stack extends Component {
     constructor(props) {
         super(props);
-       
+        this.state = {
+            selectedCard: null
+           }
+    }
+
+
+    postSelectedHandler = (x) => {
+        this.setState({selectedCard: x});
+        console.log('selected')
     }
 
     render() {
@@ -21,7 +29,9 @@ class Stack extends Component {
                             <Card key={card.english}
                                 english={card.english}
                                 spanish={card.spanish}
-                                picture={card.picture} />
+                                picture={card.picture} 
+                                clicked={() => this.postSelectedHandler(card.english)}
+                                />
                         )
                 })
             }

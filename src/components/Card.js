@@ -26,14 +26,13 @@ class Card extends Component {
     let selectedCard = [];
 
     return (
-      
         <tr className="details" 
-      onClick={(param) => this.handleClick(param, this.props.english)}>
-
+    //  onClick={(param) => this.handleClick(param, this.props.english)}
+    onClick={this.props.clicked}
+      >
         <td><img className="picture" src={`data:image/jpeg;base64,${this.props.picture.image.data}`}></img></td>
         <td className="english">{this.props.english}</td>
         <td className="spanish"> {this.props.spanish}</td>
-        
         </tr>
       
     )
