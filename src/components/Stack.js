@@ -1,7 +1,7 @@
-import axios from "axios";
 import { Component } from "react";
 import './Stack.css';
 import Card from './Card';
+import SelectedCard from "./SelectedCard";
 
 
 class Stack extends Component {
@@ -9,30 +9,29 @@ class Stack extends Component {
         super(props);
         this.state = {
             selectedCard: null
-           }
+        }
     }
 
 
     postSelectedHandler = (x) => {
-        this.setState({selectedCard: x});
-        console.log('selected')
+        this.setState({ selectedCard: x });
+        console.log('selected: ', x)
     }
 
     render() {
         let cardsToRender = [];
-        console.log('stack props: ', this.props)
         if (this.props.stack) {
             console.log(this.props.stack)
             {
                 cardsToRender = this.props.stack.cards.map(card => {
-                    return (                      
-                            <Card key={card.english}
-                                english={card.english}
-                                spanish={card.spanish}
-                                picture={card.picture} 
-                                clicked={() => this.postSelectedHandler(card.english)}
-                                />
-                        )
+                    return (
+                        <Card key={card.english}
+                            english={card.english}
+                            spanish={card.spanish}
+                            picture={card.picture}
+                            clicked={() => this.postSelectedHandler(card.english)}
+                        />
+                    )
                 })
             }
         } else { console.log('stack undefined') }
@@ -51,7 +50,7 @@ class Stack extends Component {
                 </table>
 
                 <div className="selectCard">
-
+                    <SelectedCard english={this.state.selectedCard} />
                 </div >
             </div>
         );
