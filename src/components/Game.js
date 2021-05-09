@@ -15,6 +15,7 @@ class Game extends Component {
             let user1 = this.props.user1;
             let user2 = this.props.user2;
             console.log("Game: users: ", user1, user2)
+            
             return (
                 <table className="gameContainer">
                     <thead>

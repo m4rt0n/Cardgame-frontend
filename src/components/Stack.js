@@ -12,14 +12,32 @@ class Stack extends Component {
         }
     }
 
+    postSelectedHandler = (x) => {
+        
+        this.setState({ selectedCard: x });
+      //  this.props.parentCallback(this.state.selectedCar);
+    }
+/*
     onTrigger = (event) => {
         this.props.parentCallback("Data from child");
         event.preventDefault();
     }
+*/
+handleCallback = (childData) => {
+    this.setState({ data: childData })
+    console.log("handleCallback: ",childData)
+}
 
-    postSelectedHandler = (x) => {
-        this.setState({ selectedCard: x });
+componentDidUpdate(){
+    if(this.state.selectedCard){
+        console.log("selected state updated")
+    //    if (!this.state.selectedCard || (this.state.selectedCard && this.state.selectedCard.english !== this.props.english)) {
+     //       this.props.parentCallback("Data from child");
+      //  }
+        
+        
     }
+}
 
     render() {
         let cardsToRender = [];
@@ -47,7 +65,9 @@ class Stack extends Component {
                 </table> 
                 <SelectedCard 
                 english={this.state.selectedCard}
-                userid={this.props.userid} /> 
+                userid={this.props.userid} 
+                parentCallback={this.handleCallback}
+                /> 
                 </div> 
         );
     };

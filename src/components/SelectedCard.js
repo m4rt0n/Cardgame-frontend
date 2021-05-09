@@ -8,7 +8,10 @@ class SelectedCard extends Component {
         picked: null
     }
 
-
+    onTrigger = (event) => {
+        this.props.parentCallback("Data from child");
+        event.preventDefault();
+    }
 
     componentDidUpdate() {
         if (this.props.english) {
@@ -31,7 +34,8 @@ class SelectedCard extends Component {
         if (this.state.picked !== null) {
             pickedCard = this.state.picked;
             return (
-                    <table className="stackSelectCardTable">
+                    <table className="stackSelectCardTable"
+                    onClick={this.onTrigger}>
                         <thead><tr><th>Card</th></tr></thead>                        
                         <tbody className="selectedCardDetails">
                         <tr><td><img className="selectedCardPicture" src={`data:image/jpeg;base64,${pickedCard.picture.image.data}`}

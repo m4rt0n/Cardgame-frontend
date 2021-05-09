@@ -4,14 +4,8 @@ import './User.css';
 import Stack from './Stack';
 
 class User extends Component {
-    state = {
-        data: null
-    }
 
-    handleCallback = (childData) => {
-        this.setState({ data: childData })
-        console.log("handleCallback")
-    }
+   
 
     render() {
         if (this.props) {
@@ -27,7 +21,7 @@ class User extends Component {
                     <div className="stack">
                         <Stack stack={user.stack}
                             userid={user.id}
-                            parentCallback={this.handleCallback}
+                            
                         />
                     </div>
                 </div>
