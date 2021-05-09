@@ -1,12 +1,24 @@
 
 .stackTable{
+    
+   text-align: left;
+   margin:20px;
+   border: 1px black;
+   border-style: solid;
+}
+
+.stackContainer{
+    margin:20px;
+    border: 1px black;
+    border-style: solid;
+    padding: 5px ;
+    width: 300px;  
+}
+
+.stackHeader{
     margin:20px;
     border: 1px black;
     border-style: dotted;
-    padding: 5px ;
-    width: 300px;  
-   text-align: left;
-    
 }
 
 

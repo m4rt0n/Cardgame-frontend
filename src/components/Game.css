@@ -1,0 +1,47 @@
+.gameContainer{
+height:550px;
+width: 100%;
+
+padding: 10px ;
+border: 1px black;
+border-style: solid; 
+}
+
+.headers *{ 
+    height: 20px;
+    border: 1px black;
+    border-style: dotted;
+    padding: 5px ;  
+}
+
+.content{
+    justify-content: center;
+    
+}
+
+.footers *{
+    height: 20px;
+    border: 1px black;
+    border-style: dotted;
+    padding: 5px ; 
+}
+
+.g1{
+    width: 10%;
+    color:chartreuse
+}
+
+.g3{
+    width: 10%;
+    color:chartreuse
+}
+
+.g2{
+    margin:20px;
+    border: 1px black;
+    border-style:dotted;
+    padding: 5px ;
+    
+    
+    color:blueviolet
+}

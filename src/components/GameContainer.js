@@ -1,8 +1,10 @@
 import { Component } from "react";
 import axios from "axios";
 import User from './User';
+import Game from './Game';
 import './User.css';
 import './GameContainer.css'
+
 
 class GameContainer extends Component {
     state = {
@@ -39,7 +41,7 @@ class GameContainer extends Component {
                <tbody>
                <tr>
              <td className="u1">  <User user={this.state.user1}/></td>
-             <td className="game">game stuff</td>
+             <td className="game"><Game/></td>
              <td className="u2"><User user={this.state.user2}/></td>
                </tr>
                </tbody>

@@ -8,7 +8,7 @@
 .stackSelectCardTable *{
     margin:auto;
     border: 1px black;
-    border-style:dashed;
+    border-style: dotted;
     padding: 3px ;
 }
 
