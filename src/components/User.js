@@ -4,10 +4,16 @@ import './User.css';
 import Stack from './Stack';
 
 class User extends Component {
+    state = {
+        data: null
+    }
+
+    handleCallback = (childData) => {
+        this.setState({ data: childData })
+        console.log("handleCallback")
+    }
 
     render() {
-
-
         if (this.props) {
             let user = this.props.user;
             return (
@@ -19,7 +25,10 @@ class User extends Component {
                         <p className="email">email: {user.email}</p>
                     </div>
                     <div className="stack">
-                        <Stack stack={user.stack} userid={user.id} />
+                        <Stack stack={user.stack}
+                            userid={user.id}
+                            parentCallback={this.handleCallback}
+                        />
                     </div>
                 </div>
             )

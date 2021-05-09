@@ -41,7 +41,11 @@ class GameContainer extends Component {
                <tbody>
                <tr>
              <td className="u1">  <User user={this.state.user1}/></td>
-             <td className="game"><Game/></td>
+             <td className="game">
+                 <Game user1={this.state.user1} 
+                 user2={this.state.user2}/>
+                 
+                 </td>
              <td className="u2"><User user={this.state.user2}/></td>
                </tr>
                </tbody>

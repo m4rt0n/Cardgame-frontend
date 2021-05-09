@@ -8,6 +8,8 @@ class SelectedCard extends Component {
         picked: null
     }
 
+
+
     componentDidUpdate() {
         if (this.props.english) {
             if (!this.state.picked || (this.state.picked && this.state.picked.english !== this.props.english)) {

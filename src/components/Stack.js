@@ -12,6 +12,11 @@ class Stack extends Component {
         }
     }
 
+    onTrigger = (event) => {
+        this.props.parentCallback("Data from child");
+        event.preventDefault();
+    }
+
     postSelectedHandler = (x) => {
         this.setState({ selectedCard: x });
     }
@@ -26,7 +31,8 @@ class Stack extends Component {
                             spanish={card.spanish}
                             picture={card.picture}
                             userid={this.props.userid}
-                            clicked={() => this.postSelectedHandler(card.english)}/>
+                            clicked={() => this.postSelectedHandler(card.english)}
+                            />
                     )
                 })           
         }
@@ -35,7 +41,7 @@ class Stack extends Component {
             <div className="stackContainer">
                 <table className="stackTable">
                     <thead><tr><th width="10%" className="stackHeader">Stack</th></tr></thead>
-                    <tbody>
+                    <tbody onClick={this.onTrigger}>
                         {cardsToRender}
                     </tbody>
                 </table> 
