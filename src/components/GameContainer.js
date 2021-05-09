@@ -8,24 +8,22 @@ class GameContainer extends Component {
     state = {
         user1: [],
         user2: [],
-        user1Id: '608f0eeb4484a81565857f19',
-        user2Id: '608f0eeb4484a81565857f1a'
+        user1id: '608f0eeb4484a81565857f19',
+        user2id: '608f0eeb4484a81565857f1a'
     }
 
     componentDidMount() {
-        const url = 'http://localhost:8080/users/getuserbyid/';
-        axios.get(url, { params: { userid: this.state.user1Id } }
+        const url = 'http://localhost:8080/game/loadplayers/';
+        axios.get(url, { params: 
+            { user1id: this.state.user1id, 
+                user2id: this.state.user2id},
+            }
         ).then(response => {
             this.setState({
-                user1: response.data,
+                user1: response.data[0],
+                user2:response.data[1]
             });
         });
-        axios.get(url, { params: { userid: this.state.user2Id } }
-            ).then(response => {
-                this.setState({
-                    user2: response.data,
-                });
-            });
     }
 
     render() {
