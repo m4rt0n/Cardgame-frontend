@@ -12,20 +12,18 @@ class Stack extends Component {
         }
     }
 
-    handleCallback = (childData) => {
-        this.setState({ data: childData })
-        console.log("handleCallback: ", childData)
+    handleCallback = (selectedCard) => {
+      //  this.setState({ data: selectedCard })
+        console.log("Stack handleCallback: ", selectedCard)
     }
 
     postSelectedHandler = (x) => {
         this.setState({ selectedCard: x });
     }
 
-
-
     componentDidUpdate() {
         if (this.state.selectedCard) {
-            console.log("selected card: ", this.state.selectedCard)           
+            console.log("selected card: ", this.state.selectedCard)
         }
     }
 
@@ -44,12 +42,12 @@ class Stack extends Component {
                 )
             })
         }
-        
+
         let selectedCard = <SelectedCard
-        card={this.state.selectedCard}
-       userid={this.props.userid}
-       parentCallback={this.handleCallback}
-    />
+            card={this.state.selectedCard}
+            userid={this.props.userid}
+            parentCallback={this.handleCallback}
+        />
         return (
             <div className="stackContainer">
                 <table className="stackTable">
@@ -60,12 +58,8 @@ class Stack extends Component {
                 </table>
                 {selectedCard}
             </div>
-
         );
     }
-
-
-
 };
 
 export default Stack;

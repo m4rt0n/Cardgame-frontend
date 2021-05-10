@@ -8,22 +8,18 @@ class SelectedCard extends Component {
     }
 
     onTrigger = (event) => {
-     //   this.props.parentCallback("xxxData from child: ");
         event.preventDefault();
-        if(this.state.picked!==null){
+        if (this.state.picked !== null) {
             console.log("ontrigger reached picked state")
-            if(this.state.picked!==undefined){
-                console.log("ontrigger picked:",this.state.picked.card.english)
-                this.props.parentCallback(`Data from child: ${this.state.picked.card.english}` );
+            if (this.state.picked !== undefined) {
+                this.props.parentCallback(this.state.picked)
             }
-            
         }
     }
 
     componentDidUpdate() {
         if (this.props.card) {
             if (!this.state.picked || (this.state.picked && this.state.picked.card.english !== this.props.card.english)) {
-    
                 this.setState({ picked: this.props })
             }
         }
