@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Component } from "react";
 import './SelectedCard.css';
 import './Stack';
@@ -22,20 +21,9 @@ class SelectedCard extends Component {
     componentDidUpdate() {
         if (this.props.card) {
             console.log("props: ", this.props)
-            if (!this.state.picked || (this.state.picked && this.state.picked.english !== this.props.english)) {
-                /*
-                const url = 'http://localhost:8080/users/getcardbyenglish/';
-                axios.get(url, {
-                    params: {
-                        userid: this.props.userid,
-                        english: this.props.english}
-                })
-                    .then(response => {
-                        this.setState({ picked: response.data });                       
-                    });
-*/
-              //  console.log("props: ", this.props)
-                this.setState({ picked: this.props })
+            if (!this.state.picked || (this.state.picked && this.state.picked.english !== this.props.card.english)) {
+    
+                this.setState({ picked: this.props.card })
             }
 
         }else{console.log("no props")}

@@ -25,9 +25,7 @@ class Stack extends Component {
 
     componentDidUpdate() {
         if (this.state.selectedCard) {
-            console.log("selected state updated")
-            console.log("selected card: ", this.state.selectedCard)
-            
+            console.log("selected card: ", this.state.selectedCard)           
         }
     }
 
@@ -48,7 +46,7 @@ class Stack extends Component {
         }
         
         let selectedCard = <SelectedCard
-        card={this.selectedCard}
+        card={this.state.selectedCard}
     //   userid={this.props.userid}
     //   parentCallback={this.handleCallback}
     />
