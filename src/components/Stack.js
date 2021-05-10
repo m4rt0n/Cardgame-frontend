@@ -12,64 +12,62 @@ class Stack extends Component {
         }
     }
 
-    postSelectedHandler = (x) => {
-        
-        this.setState({ selectedCard: x });
-      //  this.props.parentCallback(this.state.selectedCar);
+    handleCallback = (childData) => {
+        this.setState({ data: childData })
+        console.log("handleCallback: ", childData)
     }
-/*
-    onTrigger = (event) => {
-        this.props.parentCallback("Data from child");
-        event.preventDefault();
-    }
-*/
-handleCallback = (childData) => {
-    this.setState({ data: childData })
-    console.log("handleCallback: ",childData)
-}
 
-componentDidUpdate(){
-    if(this.state.selectedCard){
-        console.log("selected state updated")
-    //    if (!this.state.selectedCard || (this.state.selectedCard && this.state.selectedCard.english !== this.props.english)) {
-     //       this.props.parentCallback("Data from child");
-      //  }
-        
-        
+    postSelectedHandler = (x) => {
+        this.setState({ selectedCard: x });
     }
-}
+
+
+
+    componentDidUpdate() {
+        if (this.state.selectedCard) {
+            console.log("selected state updated")
+            console.log("selected card: ", this.state.selectedCard)
+            
+        }
+    }
 
     render() {
         let cardsToRender = [];
-        if (this.props.stack) {          
-                cardsToRender = this.props.stack.cards.map(card => {
-                    return (
-                        <Card key={card.english}
-                            english={card.english}
-                            spanish={card.spanish}
-                            picture={card.picture}
-                            userid={this.props.userid}
-                            clicked={() => this.postSelectedHandler(card.english)}
-                            />
-                    )
-                })           
+        if (this.props.stack) {
+            cardsToRender = this.props.stack.cards.map(card => {
+                return (
+                    <Card key={card.english}
+                        english={card.english}
+                        spanish={card.spanish}
+                        picture={card.picture}
+                        userid={this.props.userid}
+                        clicked={() => this.postSelectedHandler(card)}
+                    />
+                )
+            })
         }
-
-        return (           
+        
+        let selectedCard = <SelectedCard
+        card={this.selectedCard}
+    //   userid={this.props.userid}
+    //   parentCallback={this.handleCallback}
+    />
+        return (
             <div className="stackContainer">
                 <table className="stackTable">
                     <thead><tr><th width="10%" className="stackHeader">Stack</th></tr></thead>
                     <tbody onClick={this.onTrigger}>
                         {cardsToRender}
                     </tbody>
-                </table> 
-                <SelectedCard 
-                english={this.state.selectedCard}
-                userid={this.props.userid} 
-                parentCallback={this.handleCallback}
-                /> 
-                </div> 
+                </table>
+                {selectedCard}
+            </div>
+
         );
-    };
+    }
+
+
+
 };
+
 export default Stack;
