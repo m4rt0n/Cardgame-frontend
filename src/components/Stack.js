@@ -13,7 +13,6 @@ class Stack extends Component {
     }
 
     handleCallback = (selectedCard) => {
-      //  this.setState({ data: selectedCard })
         console.log("Stack handleCallback: ", selectedCard)
     }
 
@@ -45,7 +44,6 @@ class Stack extends Component {
 
         let selectedCard = <SelectedCard
             card={this.state.selectedCard}
-            userid={this.props.userid}
             parentCallback={this.handleCallback}
         />
         return (

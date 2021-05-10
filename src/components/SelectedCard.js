@@ -10,7 +10,6 @@ class SelectedCard extends Component {
     onTrigger = (event) => {
         event.preventDefault();
         if (this.state.picked !== null) {
-            console.log("ontrigger reached picked state")
             if (this.state.picked !== undefined) {
                 this.props.parentCallback(this.state.picked)
             }
@@ -40,7 +39,6 @@ class SelectedCard extends Component {
                                 alt={pickedCard.card.picture.title}></img></td></tr>
                             <tr><td className="selectedCardEnglish">{pickedCard.card.english}</td></tr>
                             <tr><td className="selectedCardSpanish"> {pickedCard.card.spanish}</td></tr>
-                            <tr><td className="selectedCardUserId"> {pickedCard.card.userid}</td></tr>
                         </tbody>
                     </table>
                 )

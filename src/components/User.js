@@ -5,8 +5,6 @@ import Stack from './Stack';
 
 class User extends Component {
 
-   
-
     render() {
         if (this.props) {
             let user = this.props.user;
