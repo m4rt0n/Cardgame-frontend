@@ -47,8 +47,8 @@ class Stack extends Component {
         
         let selectedCard = <SelectedCard
         card={this.state.selectedCard}
-    //   userid={this.props.userid}
-    //   parentCallback={this.handleCallback}
+       userid={this.props.userid}
+       parentCallback={this.handleCallback}
     />
         return (
             <div className="stackContainer">
